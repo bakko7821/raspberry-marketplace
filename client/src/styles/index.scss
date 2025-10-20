@@ -1,0 +1,74 @@
+@import './variables';
+
+@font-face {
+  font-family: "SFProText";
+  font-weight: 300;
+  src: url(../assets/fonts/SFProText-Light.ttf);
+}
+
+@font-face {
+  font-family: "SFProText";
+  font-weight: 400;
+  src: url(../assets/fonts/SFProText-Regular.ttf);
+}
+
+@font-face {
+  font-family: "SFProText";
+  font-weight: 500;
+  src: url(../assets/fonts/SFProText-Medium.ttf);
+}
+
+@font-face {
+  font-family: "SFProText";
+  font-weight: 600;
+  src: url(../assets/fonts/SFProText-Semibold.ttf);
+}
+
+@font-face {
+  font-family: "SFProText";
+  font-weight: 700;
+  src: url(../assets/fonts/SFProText-Bold.ttf);
+}
+
+@font-face {
+  font-family: "SFProText";
+  font-weight: 900;
+  src: url(../assets/fonts/SFProText-Heavy.ttf);
+}
+
+* {
+    font-family: "SFProText", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, #root {
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+@for $i from 1 through 100 {
+  .g#{$i} {
+    gap: #{$i}px;
+  }
+}
