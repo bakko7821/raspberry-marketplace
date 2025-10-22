@@ -17,3 +17,21 @@ _normalize.scss - обнуление стилей
 _variables.scss - объявление всех переменных
 index.scss - подключение шрифтов и базовые стили 
 ```
+
+# commit 2.2.1
+
+- Установлен sequelize
+```
+npm install sequelize pg pg-hstore
+npm install --save-dev typescript ts-node @types/node @types/validator
+npm install --save-dev @types/bluebird
+npm install --save-dev @types/pg
+npm install --save-dev @types/sequelize
+```
+- Обновлён файл **.env**
+- Установленны библиотеки bcrypt и jsonwebtoken
+```
+npm install bcrypt jsonwebtoken
+npm install --save-dev @types/bcrypt @types/jsonwebtoken
+```
+- Создана модель **/models/Card.ts**
