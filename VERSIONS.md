@@ -35,3 +35,11 @@ npm install bcrypt jsonwebtoken
 npm install --save-dev @types/bcrypt @types/jsonwebtoken
 ```
 - Создана модель **/models/Card.ts**
+
+# commit 3.2.1
+
+- Создана модель **/models/User.ts**
+
+- Создана папка **/utils/** в ней создан файл **generateToken.ts**
+
+- Создана папка **/routes/** в ней созданы файлы: **auth.ts** и **cards.ts**

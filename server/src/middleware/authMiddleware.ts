@@ -6,7 +6,6 @@ interface JwtPayload {
   email: string;
 }
 
-// Middleware для проверки токена
 export const authMiddleware = (
   req: Request,
   res: Response,
@@ -24,7 +23,6 @@ export const authMiddleware = (
 
     const decoded = jwt.verify(token, secret) as JwtPayload;
 
-    // Добавляем данные пользователя в объект запроса
     (req as any).user = decoded;
 
     next();

@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import sequelize from "./config/db";
 import Card from "./models/Card";
+import authRoutes from "./routes/auth";
+import cardsRoutes from "./routes/cards";
 
 dotenv.config();
 
@@ -11,6 +13,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/auth", authRoutes);
+app.use("/api/cards", cardsRoutes);
 
 (async () => {
   try {
