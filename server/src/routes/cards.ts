@@ -27,4 +27,12 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
+router.post("/add", async (req: Request, res: Response) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json({message: "Ошибка при добавлении карты"})
+  }
+})
+
 export default router;

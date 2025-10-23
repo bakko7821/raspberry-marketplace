@@ -43,3 +43,15 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 - Создана папка **/utils/** в ней создан файл **generateToken.ts**
 
 - Создана папка **/routes/** в ней созданы файлы: **auth.ts** и **cards.ts**
+
+# commit 4.3.1
+
+### Серверная часть
+
+- Изменен файл **/config/db.ts/**
+- Добавлен скелет POST роута **/routes/cards.ts**
+
+### Клиентская часть
+
+- Создана страница **/pages/AddCardPage.tsx**
+- Создан компонент **/components/CardsList.tsx**

@@ -1,0 +1,8 @@
+@import './variables';
+
+.header {
+    flex: 1;
+    padding: 16px;
+    background-color: $background-card-color;
+    width: 100%;
+}
