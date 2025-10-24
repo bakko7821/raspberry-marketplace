@@ -55,3 +55,16 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 
 - Создана страница **/pages/AddCardPage.tsx**
 - Создан компонент **/components/CardsList.tsx**
+
+# commit 5.4.1
+
+### Серверная часть
+
+- Установлен **multer.ts**
+``` npm install multer ```
+- Создан файл **utils/multer.ts**
+
+### Клиентская часть
+
+- Установлен **axios.ts**
+```npm install axios```

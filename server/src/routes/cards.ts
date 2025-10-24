@@ -27,12 +27,40 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
-router.post("/add", async (req: Request, res: Response) => {
-  try {
-    
-  } catch (error) {
-    res.status(500).json({message: "Ошибка при добавлении карты"})
+import upload from "../utils/multer";
+
+router.post(
+  "/add",
+  upload.array("images", 5),
+  async (req: Request, res: Response) => {
+    try {
+      const { title, description, price, about } = req.body;
+
+      if (!title || !price) {
+        return res.status(400).json({ message: "Введите title и price" });
+      }
+
+      const images = (req.files as Express.Multer.File[]).map(
+        (file) => `/uploads/${file.filename}`
+      );
+
+      const parsedAbout =
+        typeof about === "string" ? JSON.parse(about) : about || {};
+
+      const card = await Card.create({
+        title,
+        description,
+        price,
+        about: parsedAbout,
+        images,
+      });
+
+      res.status(201).json(card);
+    } catch (error) {
+      console.error("Ошибка при добавлении карты:", error);
+      res.status(500).json({ message: "Ошибка при добавлении карты" });
+    }
   }
-})
+);
 
 export default router;
