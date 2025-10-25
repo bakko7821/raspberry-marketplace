@@ -3,6 +3,7 @@ import sequelize from "../config/db";
 
 interface CardAttributes {
   id: number;
+  article: string;
   title: string;
   description?: string;
   price: number;
@@ -15,6 +16,7 @@ interface CardCreationAttributes extends Optional<CardAttributes, "id"> {}
 class Card extends Model<CardAttributes, CardCreationAttributes>
   implements CardAttributes {
   public id!: number;
+  public article!: string;
   public title!: string;
   public description?: string;
   public price!: number;
@@ -31,6 +33,11 @@ Card.init(
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
+    },
+    article: {
+      type: DataTypes.STRING(8),
+      allowNull: true,
+      unique: true,
     },
     title: {
       type: DataTypes.STRING,

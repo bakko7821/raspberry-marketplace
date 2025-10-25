@@ -1,5 +1,7 @@
 import { Router, Request, Response } from "express";
 import Card from "../models/Card";
+import upload from "../utils/multer";
+import { generateArticle } from "../utils/utils";
 
 const router = Router();
 
@@ -27,7 +29,6 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
-import upload from "../utils/multer";
 
 router.post(
   "/add",
@@ -47,7 +48,15 @@ router.post(
       const parsedAbout =
         typeof about === "string" ? JSON.parse(about) : about || {};
 
+      // Получаем все существующие артикулы
+      const existingCards = await Card.findAll({ attributes: ["article"] });
+      const existingArticles = existingCards.map((c) => c.article);
+
+      const article = generateArticle({ ids: existingArticles });
+
+      // Создаём карточку
       const card = await Card.create({
+        article,
         title,
         description,
         price,
