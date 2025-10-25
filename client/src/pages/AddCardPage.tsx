@@ -1,11 +1,6 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import axios from "axios";
 
-interface AboutField {
-  key: string;
-  value: string;
-}
-
 export const AddCardPage = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

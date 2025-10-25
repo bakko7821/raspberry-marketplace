@@ -1,0 +1,73 @@
+@import './variables';
+
+.cardList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .card {
+        transition: all 0.5s;
+        cursor: pointer;
+        background-color: $background-card-color;
+        padding: 8px;
+        align-items: start;
+        justify-content: start;
+        border-radius: 20px;
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .priceBox {
+            align-items: end;
+
+            .price {
+                font-weight: 500;
+                font-size: $rem1;
+            }
+
+            .price.count {
+                font-weight: 700;
+                font-size: $rem2;
+                color: $main-color;
+            }
+
+            .price.old-count {
+                text-decoration: line-through;
+                color: $second-text-color;
+            }
+        }
+
+        .title {
+            width: 100%;
+            height: auto;
+            font-size: $rem1;
+            font-weight: 600;
+            line-height: 1.5;
+            color: $text-color;
+            display: -webkit-box;
+            height: 48px;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+        }
+
+        .cardInfoBox p{
+            font-weight: 500;
+            line-height: 1.5;
+            font-size: $rem1;
+            color: $second-text-color;
+        }
+
+        &:hover {
+            background-color: $background-card-hover-color;
+        }
+    }
+}

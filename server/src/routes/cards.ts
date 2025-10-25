@@ -32,7 +32,7 @@ router.get("/:id", async (req: Request, res: Response) => {
 
 router.post(
   "/add",
-  upload.array("images", 5),
+  upload.array("images", 10),
   async (req: Request, res: Response) => {
     try {
       const { title, description, price, about } = req.body;

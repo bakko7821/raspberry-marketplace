@@ -81,3 +81,10 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 
 - Изменён файл AddCardPage.tsx теперь можно добавлять несколько изображений
 - Теперь можно самому указывать название характеристики.
+
+# commit 6.6.1 
+
+- Создан компонент **CardList.tsx**, **CardComponent.tsx**
+- Компоненты помещенны таким образом **/HomePage.tsx/CardList.tsx/CardComponent.tsx**
+- Создан файл **home_page.scss**
+- Создан файл **assets/Icons.tsx**
