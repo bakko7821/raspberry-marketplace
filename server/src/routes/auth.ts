@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { generateToken } from "../utils/utils";
 import User from "../models/User";
+import { authMiddleware } from "../middleware/authMiddleware";
 
 const router = Router();
 
@@ -52,6 +53,15 @@ router.post("/login", async (req: Request, res: Response) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Ошибка при авторизации" });
+  }
+});
+
+router.get("/check", authMiddleware, async (req: Request, res: Response) => {
+  try {
+    const user = (req as any).user; // это { id, email } из токена
+    res.json({ isAuth: true, user });
+  } catch {
+    res.status(401).json({ isAuth: false });
   }
 });
 

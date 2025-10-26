@@ -98,3 +98,14 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 - Создана страница **CardPage.tsx**
 - Созданы компоненты **ImagesComponent.tsx**, **InfoCardComponent.tsx**, **PriceComponent.tsx**
 - Создан файл **home_page.scss**
+
+# commit 8.8.1
+
+### Серверная часть
+- В модель **models/Card.ts** добавлен параметр raiting
+- В роут **/routes/auth.ts** добавлен GET роут /check
+
+### Клиентская часть 
+- Создана папка hooks и хук **/hooks/useAuth.ts**, который проверяет авторизован ли пользователь.
+- Создана страница **AuthPage.tsx**
+- Создан компонент **Search.tsx** и изменен **Header.tsx**

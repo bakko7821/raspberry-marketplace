@@ -10,6 +10,7 @@ import { UserPage } from './pages/UserPage';
 import { Header } from './components/Header';
 import { AddCardPage } from './pages/AddCardPage';
 import { CardPage } from './pages/CardPage';
+import { AuthPage } from './pages/AuthPage';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/auth/:id" element={<AuthPage />}/>
         <Route path="/user/:id" element={<UserPage />} />
         <Route path="/card/add" element={<AddCardPage />} />
         <Route path="/card/:id" element={<CardPage />} />

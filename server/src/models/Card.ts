@@ -9,6 +9,7 @@ interface CardAttributes {
   price: number;
   about: Record<string, string>;
   images: string[];
+  raiting: number;
 }
 
 interface CardCreationAttributes extends Optional<CardAttributes, "id"> {}
@@ -22,6 +23,7 @@ class Card extends Model<CardAttributes, CardCreationAttributes>
   public price!: number;
   public about!: Record<string, string>;
   public images!: string[];
+  public raiting!: number;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -60,6 +62,11 @@ Card.init(
       allowNull: false,
       defaultValue: [],
     },
+    raiting: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0,
+    }
   },
   {
     sequelize,
