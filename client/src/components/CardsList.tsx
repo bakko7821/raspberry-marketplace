@@ -12,7 +12,7 @@ export interface Card {
     article: string;
 }
 
-interface About {
+export interface About {
     key: string;
     value: string;
 }

@@ -88,3 +88,13 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 - Компоненты помещенны таким образом **/HomePage.tsx/CardList.tsx/CardComponent.tsx**
 - Создан файл **home_page.scss**
 - Создан файл **assets/Icons.tsx**
+
+# commit 7.7.1
+
+### Серверная часть
+- Изменен GET роут на получение карты по ID
+
+### Клиентская часть
+- Создана страница **CardPage.tsx**
+- Созданы компоненты **ImagesComponent.tsx**, **InfoCardComponent.tsx**, **PriceComponent.tsx**
+- Создан файл **home_page.scss**

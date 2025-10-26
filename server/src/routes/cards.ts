@@ -15,12 +15,14 @@ router.get("/", async (_req: Request, res: Response) => {
   }
 });
 
-router.get("/:id", async (req: Request, res: Response) => {
+router.get("/:article", async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
-    const card = await Card.findByPk(id);
+    const { article } = req.params;
+    const card = await Card.findOne({ where: { article } });
 
-    if (!card) return res.status(404).json({ message: "Карточка не найдена" });
+    if (!card) {
+      return res.status(404).json({ message: "Карточка не найдена" });
+    }
 
     res.json(card);
   } catch (error) {
