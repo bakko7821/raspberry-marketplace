@@ -109,3 +109,8 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 - Создана папка hooks и хук **/hooks/useAuth.ts**, который проверяет авторизован ли пользователь.
 - Создана страница **AuthPage.tsx**
 - Создан компонент **Search.tsx** и изменен **Header.tsx**
+
+# commit 8.9.1
+
+- Создана страница **NotFoundPage.tsx**
+- Изменена страница **AuthPage.tsx**

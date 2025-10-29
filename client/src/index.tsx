@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import "./styles/index.scss"
 import "./styles/_normalize.scss"
 
@@ -11,19 +11,32 @@ import { Header } from './components/Header';
 import { AddCardPage } from './pages/AddCardPage';
 import { CardPage } from './pages/CardPage';
 import { AuthPage } from './pages/AuthPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+
+const App = () => {
+  const location = useLocation();
+  const hideHeader = location.pathname.startsWith('/auth');
+
+  return (
+    <>
+      {!hideHeader && <Header />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/auth/:id" element={<AuthPage />} />
+        <Route path="/user/:id" element={<UserPage />} />
+        <Route path="/card/add" element={<AddCardPage />} />
+        <Route path="/card/:id" element={<CardPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
+  );
+};
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/auth/:id" element={<AuthPage />}/>
-        <Route path="/user/:id" element={<UserPage />} />
-        <Route path="/card/add" element={<AddCardPage />} />
-        <Route path="/card/:id" element={<CardPage />} />
-      </Routes>
+      <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );

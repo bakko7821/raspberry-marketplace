@@ -1,0 +1,27 @@
+@import './variables';
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    
+    .circle {
+        z-index: 1;
+        position: absolute;
+        top: -200px;
+        left: -600px;
+        background-color: $main-color;
+        width: 1500px;
+        height: 150%;
+        border-radius: 100%;
+    }
+
+    .loginComponent, .registerComponents {
+        position: relative;
+        z-index: 2;
+        left: 120px;
+        background-color: $background-card-color;
+    }
+}

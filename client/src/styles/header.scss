@@ -2,11 +2,12 @@
 
 .header {
     padding: 16px;
-    background-color: $background-card-color;
     width: 1440px;
+    border-bottom: 2px $main-color solid;
 
     .logo {
         font-size: $rem2;
+        color: $main-color;
         font-weight: 700;
         text-transform: uppercase;
     }

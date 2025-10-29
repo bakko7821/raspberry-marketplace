@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink, Link, useNavigate } from "react-router-dom"
 import '../styles/header.scss'
 import { Search } from "./Search"
 import { useAuth } from "../hooks/useAuth"
@@ -11,7 +11,7 @@ export const Header = () => {
 
     return (
         <div className="header flex center g24">
-            <p className="logo">Raspberry</p>
+            <Link to="/" className="logo">Raspberry</Link>
             <Search />
             {isAuth ? (
                 <div className="userBox">
