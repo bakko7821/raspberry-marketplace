@@ -1,27 +1,75 @@
 @import './variables';
 
-.page {
-    width: 100vw;
-    height: 100vh;
+.page.auth{
+    border: 2px red solid;
+
+    .authComponent {
+        border-radius: 44px;
+        padding: 32px;
+
+        form { 
+            button {
+                cursor: pointer;
+                padding: 8px 16px;
+                border-radius: 12px;
+                border: none;
+                font-size: $rem1_5;
+                font-weight: 500;
+                color: $button-text-color;
+                background-color: $main-color;
+                transition: all 0.4s;
+            }
+
+            button:hover {
+                background-color: $main-color-hover;
+            }
+
+            .navigationBox a {
+                color: $main-color;
+                transition: all 0.4s;
+            }
+
+            .navigationBox a:hover {
+                color: $main-color-hover;
+            }
+        }
+    }
+}
+
+.floating-input {
     position: relative;
-    overflow: hidden;
-    align-items: center;
-    
-    .circle {
-        z-index: 1;
-        position: absolute;
-        top: -200px;
-        left: -600px;
-        background-color: $main-color;
-        width: 1500px;
-        height: 150%;
-        border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    // margin: 8px;
+
+    input {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid $main-color;
+        outline: none;
+        padding: 8px;
+        border-radius: 12px;
+        font-size: $rem1;
+        color: $second-text-color;
     }
 
-    .loginComponent, .registerComponents {
-        position: relative;
-        z-index: 2;
-        left: 120px;
-        background-color: $background-card-color;
+    label {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        color: $second-text-color;
+        font-size: $rem1;
+        font-weight: 500;
+        pointer-events: none;
+        transition: all 0.2s ease;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
+        font-size: $rem0_875;
+        top: -6px;
+        background-color: $background-color;
+        color: $main-color;
+        padding: 0px 8px;
     }
 }

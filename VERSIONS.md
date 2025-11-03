@@ -114,3 +114,7 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 
 - Создана страница **NotFoundPage.tsx**
 - Изменена страница **AuthPage.tsx**
+
+# commit 8.10.1
+
+- Создан компонент **/components/auth/Login.tsx**

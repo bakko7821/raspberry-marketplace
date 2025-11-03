@@ -40,15 +40,15 @@ router.post("/register", async (req: Request, res: Response) => {
 
 router.post("/login", async (req: Request, res: Response) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { username } });
     if (!user) return res.status(400).json({ message: "Пользователь не найден" });
 
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) return res.status(401).json({ message: "Неверный пароль" });
 
-    const token = generateToken(user.id, user.email);
+    const token = generateToken(user.id, user.username);
     res.json({ token, user });
   } catch (error) {
     console.error(error);
