@@ -46,12 +46,49 @@
             }
         }
     }
+
+    .userBox {
+        position: relative;
+
+        button {
+            cursor: pointer;
+            color: $main-color;
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            svg {
+                width: 36px;
+                height: 36px;
+                transition: all 0.4s;
+            }
+
+        &:hover {
+            color: $main-color-hover;
+        }
+        }
+
+        .dropDownMenu {
+            right: 0px;
+            top: 100%;
+            background-color: $background-card-color;
+            position: absolute;
+            padding: 16px;
+            border-radius: 12px 0px 12px 12px;
+            color: $text-color;
+        }
+    }
 }
 
 .logo {
-    font-size: $rem2;
+    font-size: clamp(2rem, 2vw, 2.25rem);
     color: $main-color;
     font-weight: 700;
     text-transform: uppercase;
+    transition: all 0.4s;
+
+    &:hover {
+        color: $main-color-hover;
+    }
 }
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Register = () => {
     const [firstname, seFirstname] = useState("");
@@ -10,6 +10,7 @@ export const Register = () => {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const date: Date = new Date();
+    const navigate = useNavigate()
 
     const handleRegister = async (e: any) => {
         e.preventDefault();
@@ -52,7 +53,7 @@ export const Register = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ usernameProps, passwordProps }),
+            body: JSON.stringify({ username: usernameProps, password: passwordProps }),
             });
 
             const data = await response.json();
@@ -63,7 +64,7 @@ export const Register = () => {
 
             localStorage.setItem("token", data.token);
             setMessage("Вы успешно авторизировались")
-
+            navigate("/")
         } catch (error: any) {
             console.log(error)
             setMessage("Не удалось войти в аккаунт.");
@@ -124,7 +125,7 @@ export const Register = () => {
                     <label htmlFor="password">Пароль</label>
                 </div>
                 <div className="navigationBox flex g16">
-                    <Link to="/auth/register">Уже есть аккаунт? Войти в аккаунт</Link>
+                    <Link to="/auth/login">Уже есть аккаунт? Войти в аккаунт</Link>
                 </div>
                 <button type="submit" disabled={loading}>
                     {loading ? "Регистрация..." : "Зарегистрироваться"}

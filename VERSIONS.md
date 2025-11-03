@@ -122,3 +122,8 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 # commit 8.11.1
 
 - Создан компонент **/components/auth/Register.tsx**
+
+# commit 8.12.1
+
+- Законченна страница **/pages/AuthPage.tsx**
+- В Header были добавленны 3 компонента, **CartIcon**, **UserIcon**, **/components/Header/DropDownMenu.tsx**

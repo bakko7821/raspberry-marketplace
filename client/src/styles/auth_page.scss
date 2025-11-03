@@ -18,19 +18,19 @@
                 color: $button-text-color;
                 background-color: $main-color;
                 transition: all 0.4s;
-            }
 
-            button:hover {
-                background-color: $main-color-hover;
+                &:hover {
+                    background-color: $main-color-hover;
+                }
             }
 
             .navigationBox a {
                 color: $main-color;
                 transition: all 0.4s;
-            }
 
-            .navigationBox a:hover {
-                color: $main-color-hover;
+                &:hover {
+                    color: $main-color-hover;
+                }
             }
         }
     }
@@ -40,7 +40,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    // margin: 8px;
 
     input {
         width: 100%;

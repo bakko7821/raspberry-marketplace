@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate()
 
     const handleLogin = async (e: any) => {
         e.preventDefault();
@@ -29,7 +30,7 @@ export const Login = () => {
 
             localStorage.setItem("token", data.token);
             setMessage("Вы успешно авторизировались")
-
+            navigate("/")
         } catch (error: any) {
             console.log(error)
             setMessage("Не удалось войти в аккаунт.");
