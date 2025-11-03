@@ -118,3 +118,7 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 # commit 8.10.1
 
 - Создан компонент **/components/auth/Login.tsx**
+
+# commit 8.11.1
+
+- Создан компонент **/components/auth/Register.tsx**
