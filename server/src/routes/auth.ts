@@ -26,7 +26,6 @@ router.post("/register", async (req: Request, res: Response) => {
         username,
         email,
         password: hashedPassword,
-        date: new Date(date),
     });
 
     const token = generateToken(user.id, user.email);

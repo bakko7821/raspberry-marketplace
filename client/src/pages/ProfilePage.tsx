@@ -1,9 +1,22 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+export interface User {
+  id: string;
+  firstname: string;
+  lastname: string;
+  username: string;
+  email: string;
+  date: Date;
+  avatar: string;
+  cart: string[];
+  favorite: string[];
+  balance: number;
+}
+
 export const ProfilePage = () => {
   const { id } = useParams();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

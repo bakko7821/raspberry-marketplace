@@ -8,13 +8,18 @@ interface UserAttributes {
   username: string;
   email: string;
   password: string;
-  date: Date;
   avatar?: string;
+  cart: number[];        // 🆕 массив ID карточек
+  favorites: number[];   // 🆕 массив ID карточек
+  balance: number;       // 🆕 баланс пользователя
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-type UserCreationAttributes = Optional<UserAttributes, "id" | "avatar" | "createdAt" | "updatedAt">;
+type UserCreationAttributes = Optional<
+  UserAttributes,
+  "id" | "avatar" | "cart" | "favorites" | "balance" | "createdAt" | "updatedAt"
+>;
 
 class User extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes {
@@ -24,8 +29,10 @@ class User extends Model<UserAttributes, UserCreationAttributes>
   public username!: string;
   public email!: string;
   public password!: string;
-  public date!: Date;
   public avatar?: string;
+  public cart!: number[];
+  public favorites!: number[];
+  public balance!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
@@ -62,14 +69,25 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
     avatar: {
       type: DataTypes.STRING,
       allowNull: true,
       defaultValue: null,
+    },
+    cart: {
+      type: DataTypes.JSON, // можно хранить массив в JSON
+      allowNull: false,
+      defaultValue: [],
+    },
+    favorites: {
+      type: DataTypes.JSON,
+      allowNull: false,
+      defaultValue: [],
+    },
+    balance: {
+      type: DataTypes.FLOAT, // можно использовать DECIMAL при необходимости
+      allowNull: false,
+      defaultValue: 0,
     },
   },
   {

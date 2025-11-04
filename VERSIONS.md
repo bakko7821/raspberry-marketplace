@@ -138,3 +138,13 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 ### Клиентская часть
 
 - Создана страница **pages/ProfilePage.tsx**
+
+# commit 10.14.1
+
+### Серверная часть
+
+- Обновленна модель User.ts, убран параметр date, добавленны 3 параметра (массив: cart, массив: favorites, число: balance)
+
+### Клиентская часть
+
+- В DropDownMenu.tsx - добавлена ссылка на /favorites/me, добавлена кнопка LogOut

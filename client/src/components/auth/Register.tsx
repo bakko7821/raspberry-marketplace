@@ -9,7 +9,6 @@ export const Register = () => {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
-    const date: Date = new Date();
     const navigate = useNavigate()
 
     const handleRegister = async (e: any) => {
@@ -23,7 +22,7 @@ export const Register = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ firstname, lastname, username, email, password, date }),
+            body: JSON.stringify({ firstname, lastname, username, email, password }),
             });
 
             const data = await response.json();
