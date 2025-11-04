@@ -69,13 +69,26 @@
         }
 
         .dropDownMenu {
+            align-items: start;
             right: 0px;
-            top: 100%;
-            background-color: $background-card-color;
+            top: calc(100% + 16px);
+            background-color: $background-color;
             position: absolute;
             padding: 16px;
             border-radius: 12px 0px 12px 12px;
             color: $text-color;
+
+            .link {
+                padding: 8px;
+                border-radius: 12px;
+                color: $main-color;
+                white-space: nowrap;
+                transition: all 0.4s;
+
+                &:hover {
+                    background-color: $background-card-hover-color;
+                }
+            }
         }
     }
 }

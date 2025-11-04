@@ -19,7 +19,7 @@ export const Header = () => {
             <Search />
             {isAuth ? (
                 <div className="userBox flex center g8">
-                    <button className="cartButton flex center" onClick={() => navigate("/cart")}><CartIcon /></button>
+                    <button className="cartButton flex center" onClick={() => navigate("/cart/me")}><CartIcon /></button>
                     <button className="userButton flex center" onClick={() => setDropDownStatus(prev => !prev)}><UserIcon /></button>
                     {dropDownStatus && <DropDownMenu />}
                 </div>

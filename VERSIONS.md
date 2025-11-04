@@ -127,3 +127,14 @@ npm install --save-dev @types/bcrypt @types/jsonwebtoken
 
 - Законченна страница **/pages/AuthPage.tsx**
 - В Header были добавленны 3 компонента, **CartIcon**, **UserIcon**, **/components/Header/DropDownMenu.tsx**
+
+# commit 9.13.1
+
+### Серверная часть
+
+- Создан GET роут на получение данных о пользователе по токену **/routes/users.ts**
+- Создан GET роут на получение данных о пользователе по id **/routes/users.ts**
+
+### Клиентская часть
+
+- Создана страница **pages/ProfilePage.tsx**

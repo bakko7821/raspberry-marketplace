@@ -12,6 +12,7 @@ import { AddCardPage } from './pages/AddCardPage';
 import { CardPage } from './pages/CardPage';
 import { AuthPage } from './pages/AuthPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { ProfilePage } from './pages/ProfilePage';
 
 const App = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const App = () => {
       {!hideHeader && <Header />}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/profile/:id" element={<ProfilePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/auth/:id" element={<AuthPage />} />
         <Route path="/user/:id" element={<UserPage />} />
